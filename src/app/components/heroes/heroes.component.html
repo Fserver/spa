@@ -1,20 +1,7 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col" *ngFor="let item of heroes; let i = index">
-    <div class="card h-auto">
-      <img [src]="item.img" class="card-img-top" [alt]="item.nombre" />
-      <div class="card-body">
-        <h5 class="card-title">{{ item.nombre }}</h5>
-        <p class="card-text">{{ item.bio }}</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">{{ item.aparicion }}</small>
-      </div>
-      <div class="d-grid p-2">
-        <!-- <a class="btn btn-secondary" [routerLink]="['/heroe', i]"> Ver más </a> -->
 
-        <button (click)="verHeroe(i)" type="button"class="btn btn-secondary"> Ver más </button>
+  <!-- *ngFor="let heroe of heroes; let i = index" -->
 
-      </div>
-    </div>
-  </div>
+  <app-heroe-tarjeta (heroeSeleccionado)="verHeroe( $event )" [heroe]="item" [heroe]="item" *ngFor="let item of heroes"></app-heroe-tarjeta>
+
 </div>
